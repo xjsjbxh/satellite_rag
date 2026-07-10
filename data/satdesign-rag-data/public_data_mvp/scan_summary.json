@@ -1,0 +1,252 @@
+{
+  "schema_version": "satdesign.rag_scan_summary.v1",
+  "root": "C:\\baidunetdiskdownload\\公开数据",
+  "profile": "public_data_mvp",
+  "generated_at": "2026-07-09T03:28:39.612602+00:00",
+  "totals": {
+    "files": 34698,
+    "size_bytes": 60742802416,
+    "size_gb": 56.57
+  },
+  "mvp_actions": {
+    "defer": 1689,
+    "exclude": 19739,
+    "include": 13270
+  },
+  "parse_routes": {
+    "archive_deferred": 3,
+    "html_fallback": 1139,
+    "image_reference_only": 19640,
+    "jsonl_records": 1,
+    "markdown": 11662,
+    "pdf_text_first": 2144,
+    "spreadsheet_metadata": 8,
+    "unsupported": 2,
+    "word_document": 99
+  },
+  "extensions": {
+    ".jpg": 19640,
+    ".md": 11662,
+    ".pdf": 2144,
+    ".html": 1139,
+    ".docx": 98,
+    ".xlsx": 7,
+    ".zip": 3,
+    ".py": 2,
+    ".xls": 1,
+    ".doc": 1,
+    ".jsonl": 1
+  },
+  "directories": [
+    {
+      "name": "中文教材",
+      "files": 322,
+      "size_bytes": 28636762198,
+      "size_mb": 27310.14,
+      "extensions": {
+        ".pdf": 322
+      },
+      "actions": {
+        "defer": 322
+      }
+    },
+    {
+      "name": "GJB",
+      "files": 479,
+      "size_bytes": 11498523783,
+      "size_mb": 10965.85,
+      "extensions": {
+        ".pdf": 479
+      },
+      "actions": {
+        "include": 479
+      }
+    },
+    {
+      "name": "QJ标准",
+      "files": 324,
+      "size_bytes": 7047700784,
+      "size_mb": 6721.21,
+      "extensions": {
+        ".pdf": 323,
+        ".py": 1
+      },
+      "actions": {
+        "exclude": 1,
+        "include": 323
+      }
+    },
+    {
+      "name": "ISO标准",
+      "files": 202,
+      "size_bytes": 4935342133,
+      "size_mb": 4706.71,
+      "extensions": {
+        ".pdf": 202
+      },
+      "actions": {
+        "include": 202
+      }
+    },
+    {
+      "name": "英文教材",
+      "files": 106,
+      "size_bytes": 2674280363,
+      "size_mb": 2550.39,
+      "extensions": {
+        ".pdf": 106
+      },
+      "actions": {
+        "defer": 106
+      }
+    },
+    {
+      "name": "GB和GBT国标",
+      "files": 80,
+      "size_bytes": 2494016375,
+      "size_mb": 2378.48,
+      "extensions": {
+        ".pdf": 80
+      },
+      "actions": {
+        "include": 80
+      }
+    },
+    {
+      "name": "公众号文章",
+      "files": 21796,
+      "size_bytes": 2198097018,
+      "size_mb": 2096.27,
+      "extensions": {
+        ".jpg": 19640,
+        ".html": 1139,
+        ".md": 808,
+        ".pdf": 112,
+        ".docx": 97
+      },
+      "actions": {
+        "defer": 1255,
+        "exclude": 19737,
+        "include": 804
+      }
+    },
+    {
+      "name": "美国航天中心标准和手册",
+      "files": 232,
+      "size_bytes": 403097443,
+      "size_mb": 384.42,
+      "extensions": {
+        ".pdf": 232
+      },
+      "actions": {
+        "include": 232
+      }
+    },
+    {
+      "name": "ECSS手册",
+      "files": 61,
+      "size_bytes": 386985433,
+      "size_mb": 369.06,
+      "extensions": {
+        ".pdf": 58,
+        ".xls": 1,
+        ".doc": 1,
+        ".docx": 1
+      },
+      "actions": {
+        "include": 61
+      }
+    },
+    {
+      "name": "NASA标准",
+      "files": 82,
+      "size_bytes": 195838696,
+      "size_mb": 186.77,
+      "extensions": {
+        ".pdf": 82
+      },
+      "actions": {
+        "include": 82
+      }
+    },
+    {
+      "name": "ECSS标准",
+      "files": 151,
+      "size_bytes": 159768411,
+      "size_mb": 152.37,
+      "extensions": {
+        ".pdf": 144,
+        ".xlsx": 4,
+        ".zip": 3
+      },
+      "actions": {
+        "defer": 3,
+        "include": 148
+      }
+    },
+    {
+      "name": "卫星百科数据",
+      "files": 10856,
+      "size_bytes": 89285882,
+      "size_mb": 85.15,
+      "extensions": {
+        ".md": 10854,
+        ".xlsx": 1,
+        ".py": 1
+      },
+      "actions": {
+        "defer": 1,
+        "exclude": 1,
+        "include": 10854
+      }
+    },
+    {
+      "name": "美军标",
+      "files": 4,
+      "size_bytes": 14172550,
+      "size_mb": 13.52,
+      "extensions": {
+        ".pdf": 4
+      },
+      "actions": {
+        "include": 4
+      }
+    },
+    {
+      "name": "NASA经验教训库liss_merged_lessons_filtered.jsonl",
+      "files": 1,
+      "size_bytes": 8296186,
+      "size_mb": 7.91,
+      "extensions": {
+        ".jsonl": 1
+      },
+      "actions": {
+        "include": 1
+      }
+    },
+    {
+      "name": "GJB目录.xlsx",
+      "files": 1,
+      "size_bytes": 380677,
+      "size_mb": 0.36,
+      "extensions": {
+        ".xlsx": 1
+      },
+      "actions": {
+        "defer": 1
+      }
+    },
+    {
+      "name": "QJ标准2次评估.xlsx",
+      "files": 1,
+      "size_bytes": 254484,
+      "size_mb": 0.24,
+      "extensions": {
+        ".xlsx": 1
+      },
+      "actions": {
+        "defer": 1
+      }
+    }
+  ]
+}

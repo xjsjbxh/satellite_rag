@@ -1,0 +1,15 @@
+pydantic>=2.0
+qdrant-client>=1.9
+openai>=1.0
+
+# Optional local embedding / reranking
+# FlagEmbedding
+# torch
+# transformers
+
+# Optional PDF parsing
+# pypdf
+# pdfplumber
+
+# Optional keyword search service
+# elasticsearch

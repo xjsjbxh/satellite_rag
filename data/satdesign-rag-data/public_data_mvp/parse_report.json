@@ -1,0 +1,27 @@
+{
+  "schema_version": "satdesign.rag_prepare_report.v1",
+  "generated_at": "2026-07-06T06:45:20.262758+00:00",
+  "manifest_path": "C:\\satdesign-rag-data\\public_data_mvp\\manifest.jsonl",
+  "out_dir": "C:\\satdesign-rag-data\\public_data_mvp",
+  "corpus_path": "C:\\satdesign-rag-data\\public_data_mvp\\corpus.jsonl",
+  "failures_path": "C:\\satdesign-rag-data\\public_data_mvp\\parse_failures.jsonl",
+  "selected_action": "include",
+  "selected_routes": [
+    "jsonl_records",
+    "markdown"
+  ],
+  "selected_files": 11659,
+  "parsed_files": 11659,
+  "failed_files": 0,
+  "records": 34683,
+  "routes": {
+    "jsonl_records": 1,
+    "markdown": 11658
+  },
+  "source_types": {
+    "article": 1883,
+    "lesson": 2879,
+    "wiki": 29921
+  },
+  "failures": {}
+}

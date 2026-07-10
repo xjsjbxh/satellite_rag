@@ -1,0 +1,23 @@
+{
+  "schema_version": "satdesign.rag_prepare_report.v1",
+  "generated_at": "2026-07-06T06:44:03.945349+00:00",
+  "manifest_path": "C:\\satdesign-rag-data\\public_data_mvp\\manifest.jsonl",
+  "out_dir": "C:\\satdesign-rag-data\\public_data_mvp_pdf_smoke",
+  "corpus_path": "C:\\satdesign-rag-data\\public_data_mvp_pdf_smoke\\corpus.jsonl",
+  "failures_path": "C:\\satdesign-rag-data\\public_data_mvp_pdf_smoke\\parse_failures.jsonl",
+  "selected_action": "include",
+  "selected_routes": [
+    "pdf_text_first"
+  ],
+  "selected_files": 10,
+  "parsed_files": 10,
+  "failed_files": 0,
+  "records": 1485,
+  "routes": {
+    "pdf_text_first": 10
+  },
+  "source_types": {
+    "standard": 1485
+  },
+  "failures": {}
+}
