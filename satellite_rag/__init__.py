@@ -12,16 +12,29 @@ from satellite_rag.factory import (
     clear_rag_runtime_cache,
     get_default_retriever,
 )
+from satellite_rag.hyde import HydeRetriever, TemplateHydeGenerator
+from satellite_rag.query_expansion import (
+    MultiQueryRetriever,
+    QueryRewriter,
+    SubQueryRewriter,
+    SynonymQueryRewriter,
+)
 from satellite_rag.retriever import HybridRetriever, retrieve_phase_evidence
 from satellite_rag.schemas import RagChunk, RetrievalResult, SearchRequest
 
 __all__ = [
     "HybridRetriever",
+    "HydeRetriever",
+    "MultiQueryRetriever",
+    "QueryRewriter",
     "RagChunk",
     "RagConfig",
     "RagRuntime",
     "RetrievalResult",
     "SearchRequest",
+    "SubQueryRewriter",
+    "SynonymQueryRewriter",
+    "TemplateHydeGenerator",
     "build_embedding_client",
     "build_keyword_store",
     "build_rag_runtime",
