@@ -29,10 +29,10 @@ class RagConfig:
     rerank_api_key: str | None = None
     rerank_auth_header: str = "Authorization"
     rerank_timeout: float = 120.0
-    vector_top_k: int = 30
-    bm25_top_k: int = 30
-    fusion_top_k: int = 20
-    rerank_top_k: int = 20
+    vector_top_k: int = 100
+    bm25_top_k: int = 100
+    fusion_top_k: int = 60
+    rerank_top_k: int = 60
     final_top_k: int = 8
     fusion_method: str = "rrf"
     vector_weight: float = 1.0

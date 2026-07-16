@@ -34,9 +34,10 @@ class KeywordStore(Protocol):
 class LocalBM25KeywordStore:
     """Small BM25 implementation for tests and local demos."""
 
-    def __init__(self, k1: float = 1.5, b: float = 0.75) -> None:
+    def __init__(self, k1: float = 1.5, b: float = 0.75, ngram_cjk: int = 2) -> None:
         self.k1 = k1
         self.b = b
+        self.ngram_cjk = ngram_cjk
         self._chunks: dict[str, RagChunk] = {}
         self._term_freqs: dict[str, Counter[str]] = {}
         self._doc_freqs: Counter[str] = Counter()
@@ -47,7 +48,7 @@ class LocalBM25KeywordStore:
             if chunk.chunk_id in self._term_freqs:
                 for token in self._term_freqs[chunk.chunk_id]:
                     self._doc_freqs[token] -= 1
-            tokens = _tokenize(chunk.content)
+            tokens = _tokenize(chunk.content, ngram_cjk=self.ngram_cjk)
             terms = Counter(tokens)
             self._chunks[chunk.chunk_id] = chunk
             self._term_freqs[chunk.chunk_id] = terms
@@ -62,7 +63,7 @@ class LocalBM25KeywordStore:
         top_k: int,
         metadata_filter: dict[str, Any] | None = None,
     ) -> list[RetrievalResult]:
-        query_terms = _tokenize(query)
+        query_terms = _tokenize(query, ngram_cjk=self.ngram_cjk)
         if not query_terms:
             return []
         avg_len = (sum(self._lengths.values()) / len(self._lengths)) if self._lengths else 0.0
@@ -242,7 +243,22 @@ class ElasticsearchKeywordStore:
         return headers
 
 
-def _tokenize(text: str) -> list[str]:
+def _tokenize(text: str, *, ngram_cjk: int = 2) -> list[str]:
+    """Tokenize text for BM25 matching.
+
+    Parameters
+    ----------
+    text : str
+        Raw text to tokenize.
+    ngram_cjk : int
+        Maximum n-gram length for CJK characters.  2 = bigrams only (default).
+        3 = bigrams + trigrams for better coverage of multi-character terms.
+
+    Returns
+    -------
+    list[str]
+        Token list with CJK n-grams appended.
+    """
     normalized = text.lower()
     tokens: list[str] = []
     current: list[str] = []
@@ -257,9 +273,14 @@ def _tokenize(text: str) -> list[str]:
             tokens.append(char)
     if current:
         tokens.append("".join(current))
-    # Add simple CJK bigrams to improve local fallback recall.
+    # Add CJK n-grams starting from bigrams.
     cjk_chars = [token for token in tokens if len(token) == 1 and "\u4e00" <= token <= "\u9fff"]
-    tokens.extend("".join(pair) for pair in zip(cjk_chars, cjk_chars[1:]))
+    if len(cjk_chars) >= 2:
+        tokens.extend("".join(pair) for pair in zip(cjk_chars, cjk_chars[1:]))
+    if ngram_cjk >= 3 and len(cjk_chars) >= 3:
+        tokens.extend(
+            "".join(triple) for triple in zip(cjk_chars, cjk_chars[1:], cjk_chars[2:])
+        )
     return tokens
 
 
